@@ -1,21 +1,31 @@
 NAME = animal
-FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
-OBJS = $(SRCS:.cpp=.o)
+FLAGS = -Wall -Wextra -Werror -std=c++98 -Iinc
+SRCS = $(addprefix src/, \
+	main.cpp \
+	Animal.cpp \
+	Cat.cpp \
+	Dog.cpp \
+	WrongAnimal.cpp \
+	WrongCat.cpp \
+	Brain.cpp \
+)
+OBJS = $(patsubst src/%.cpp, tmp/%.o, $(SRCS))
 
 all : $(NAME)
 
-%.o : %.cpp
-	c++ $(FLAGS) -c $< -o $@
+tmp/%.o : src/%.cpp
+	@ mkdir -p tmp
+	@ c++ $(FLAGS) -c $< -o $@ && printf "."
 
 $(NAME) : $(OBJS)
-	c++ $(FLAGS) $(OBJS) -o $@
+	@ echo
+	@ c++ $(FLAGS) $(OBJS) -o $@
 
 clean :
-	rm -f $(OBJS)
+	@ rm -rf tmp && echo "clean"
 
 fclean : clean
-	rm -f $(NAME)
+	@ rm -f $(NAME) && echo "fclean"
 
 re : fclean all
 

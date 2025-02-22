@@ -1,21 +1,29 @@
 NAME = materia
-FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp
-OBJS = $(SRCS:.cpp=.o)
+FLAGS = -Wall -Wextra -Werror -std=c++98 -Iinc
+SRCS = $(addprefix src/, \
+	main.cpp \
+	AMateria.cpp \
+	Cure.cpp \
+	Ice.cpp \
+	ICharacter.cpp \
+)
+OBJS = $(patsubst src/%.cpp, tmp/%.o, $(SRCS))
 
 all : $(NAME)
 
-%.o : %.cpp
-	c++ $(FLAGS) -c $< -o $@
+tmp/%.o : src/%.cpp
+	@ mkdir -p tmp
+	@ c++ $(FLAGS) -c $< -o $@ && printf "."
 
 $(NAME) : $(OBJS)
-	c++ $(FLAGS) $(OBJS) -o $@
+	@ echo
+	@ c++ $(FLAGS) $(OBJS) -o $@
 
 clean :
-	rm -f $(OBJS)
+	@ rm -rf tmp && echo "clean"
 
 fclean : clean
-	rm -f $(NAME)
+	@ rm -f $(NAME) && echo "fclean"
 
 re : fclean all
 
