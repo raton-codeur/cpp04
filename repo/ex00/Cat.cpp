@@ -6,10 +6,9 @@ Cat::Cat() : Animal()
 	_type = "Cat";
 }
 
-Cat::Cat(const Cat& cat) : Animal()
+Cat::Cat(const Cat& cat) : Animal(cat)
 {
 	std::cout << "Cat : copy constructor" << std::endl;
-	_type = cat._type;
 }
 
 Cat& Cat::operator=(const Cat& cat)

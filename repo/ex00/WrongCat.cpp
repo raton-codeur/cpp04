@@ -6,10 +6,9 @@ WrongCat::WrongCat() : WrongAnimal()
 	_type = "WrongCat";
 }
 
-WrongCat::WrongCat(const WrongCat& wrongCat) : WrongAnimal()
+WrongCat::WrongCat(const WrongCat& wrongCat) : WrongAnimal(wrongCat)
 {
 	std::cout << "WrongCat : copy constructor" << std::endl;
-	_type = wrongCat._type;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& wrongCat)

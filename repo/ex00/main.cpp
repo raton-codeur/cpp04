@@ -4,6 +4,15 @@
 
 int main()
 {
+	std::cout << "--- 0 ---" << std::endl;
+	{
+		Cat cat1;
+		Cat cat2(cat1);
+		Animal animal;
+		animal = cat1;
+		std::cout << animal.getType() << std::endl;
+	}
+
 	std::cout << "--- 1 ---" << std::endl;
 	Animal* animal = new Animal();
 	Animal* cat = new Cat();
