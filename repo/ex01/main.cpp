@@ -20,12 +20,13 @@ int main()
 	}
 
 	std::cout << "--- 2 ---" << std::endl;
-	Animal* animal = new Animal();
-	Animal* cat = new Cat();
-	Animal* dog = new Dog();
-
+	Animal* animals[10];
+	for (int i = 0; i < 5; i++)
+		animals[i] = new Cat();
 	std::cout << "--- 3 ---" << std::endl;
-	delete animal;
-	delete cat;
-	delete dog;
+	for (int i = 5; i < 10; i++)
+		animals[i] = new Dog();
+	std::cout << "--- 4 ---" << std::endl;
+	for (int i = 0; i < 10; i++)
+		delete animals[i];
 }
