@@ -5,7 +5,8 @@ SRCS = $(addprefix src/, \
 	AMateria.cpp \
 	Cure.cpp \
 	Ice.cpp \
-	ICharacter.cpp \
+	Character.cpp \
+	MateriaSource.cpp \
 )
 OBJS = $(patsubst src/%.cpp, tmp/%.o, $(SRCS))
 
@@ -13,11 +14,11 @@ all : $(NAME)
 
 tmp/%.o : src/%.cpp
 	@ mkdir -p tmp
-	@ c++ $(FLAGS) -c $< -o $@ && printf "."
+	c++ $(FLAGS) -c $< -o $@ && printf ".\n"
 
 $(NAME) : $(OBJS)
 	@ echo
-	@ c++ $(FLAGS) $(OBJS) -o $@
+	c++ $(FLAGS) $(OBJS) -o $@
 
 clean :
 	@ rm -rf tmp && echo "clean"

@@ -7,12 +7,12 @@ AMateria::AMateria() : _type("default type")
 
 AMateria::AMateria(const AMateria& materia) : _type(materia._type)
 {
-	std::cout << "AMateria : copy constructor" << std::endl;
+	std::cout << "AMateria " << _type << " : copy constructor" << std::endl;
 }
 
 AMateria::AMateria(const std::string& type) : _type(type)
 {
-	std::cout << "AMateria : constructor" << std::endl;
+	std::cout << "AMateria " << type << " : constructor" << std::endl;
 }
 
 AMateria& AMateria::operator=(const AMateria& materia)
@@ -23,10 +23,15 @@ AMateria& AMateria::operator=(const AMateria& materia)
 
 AMateria::~AMateria()
 {
-	std::cout << "AMateria : destructor" << std::endl;
+	std::cout << "AMateria " << _type << " : destructor" << std::endl;
 }
 
 const std::string& AMateria::getType() const
 {
 	return _type;
+}
+
+void AMateria::use(ICharacter& target)
+{
+	(void)target;
 }

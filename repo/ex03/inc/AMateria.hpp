@@ -1,8 +1,9 @@
-#ifndef AMATERIA_HPP
-#define AMATERIA_HPP
+#ifndef A_MATERIA_HPP
+#define A_MATERIA_HPP
 #include <iostream>
 #include <string>
 #include "ICharacter.hpp"
+class ICharacter;
 
 class AMateria
 {
