@@ -7,19 +7,17 @@ int main()
 	std::cout << "--- 0 ---" << std::endl;
 	{
 		Cat cat1;
-		{
-			Cat cat2(cat1);
-		}
+		Cat cat2(cat1);
 	}
 
 	std::cout << "--- 1 ---" << std::endl;
 	{
 		Dog dog1;
-		{
-			Dog dog2;
-			dog2 = dog1;
-		}
+		Dog dog2;
+		dog2 = dog1;
 	}
+
+	// Animal animal;
 
 	Animal* animals[10];
 	
