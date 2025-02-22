@@ -1,7 +1,4 @@
-**/.DS_Store
-repo/*/*
-!repo/*/*.cpp
-!repo/*/*.h
-!repo/*/*.hpp
-!repo/*/*.tpp
-!repo/*/Makefile
+**/*
+!**/*.cpp
+!**/*.hpp
+!**/Makefile
