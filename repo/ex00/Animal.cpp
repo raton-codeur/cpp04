@@ -21,12 +21,12 @@ Animal::~Animal()
 	std::cout << "Animal : destructor" << std::endl;
 }
 
-void Animal::makeSound() const
-{
-	std::cout << "default sound" << std::endl;
-}
-
 const std::string& Animal::getType() const
 {
 	return _type;
+}
+
+void Animal::makeSound() const
+{
+	std::cout << "default sound" << std::endl;
 }

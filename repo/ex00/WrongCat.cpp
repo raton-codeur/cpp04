@@ -1,11 +1,5 @@
 #include "WrongCat.hpp"
 
-// WrongCat();
-// WrongCat(const WrongCat& wrongCat);
-// WrongCat&	operator=(const WrongCat& wrongCat);
-// ~WrongCat();
-// void		makeSound() const;
-
 WrongCat::WrongCat() : WrongAnimal()
 {
 	std::cout << "WrongCat : default constructor" << std::endl;
