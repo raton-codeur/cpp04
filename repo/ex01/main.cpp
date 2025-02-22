@@ -21,8 +21,8 @@ int main()
 
 	std::cout << "--- 2 ---" << std::endl;
 	Animal* animal = new Animal();
-	Cat* cat = new Cat();
-	Dog* dog = new Dog();
+	Animal* cat = new Cat();
+	Animal* dog = new Dog();
 
 	std::cout << "--- 3 ---" << std::endl;
 	delete animal;
