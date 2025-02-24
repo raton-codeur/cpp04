@@ -33,5 +33,9 @@ int main()
 
 	std::cout << "--- 4 ---" << std::endl;
 	for (int i = 0; i < 10; i++)
+		animals[i]->makeSound();
+
+	std::cout << "--- 5 ---" << std::endl;
+	for (int i = 0; i < 10; i++)
 		delete animals[i];
 }
