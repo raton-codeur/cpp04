@@ -56,6 +56,7 @@ int main()
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
 		ICharacter* me = new Character("me");
+		std::cout << "--- 10 ----" << std::endl;
 		AMateria* tmp;
 		tmp = src->createMateria("ice");
 		me->equip(tmp);
@@ -65,6 +66,6 @@ int main()
 		me->use(1, bob);
 		delete me;
 		delete src;
-		std::cout << "--- 10 ----" << std::endl;
+		std::cout << "--- 11 ----" << std::endl;
 	}
 }
