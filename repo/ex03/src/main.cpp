@@ -29,9 +29,10 @@ int main()
 		ice.use(bob);
 
 		AMateria *materials[2];
+		std::cout << "--- 6 ---" << std::endl;
 		materials[0] = cure.clone();
 		materials[1] = ice.clone();
-		std::cout << "--- 6 ---" << std::endl;
+		std::cout << "--- 7 ---" << std::endl;
 		bob.equip(materials[0]);
 		bob.equip(materials[1]);
 		bob.use(0, bob);
@@ -40,7 +41,6 @@ int main()
 		bob.unequip(0);
 		bob.use(0, bob);
 
-		for (int i = 0; i < 2; i++)
-			delete materials[i];
+		delete materials[0];
 	}
 }
