@@ -52,6 +52,19 @@ int main()
 		std::cout << "--- 8 ----" << std::endl;
 		Character bob2(bob);
 		std::cout << "--- 9 ----" << std::endl;
-		
+		IMateriaSource* src = new MateriaSource();
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		ICharacter* me = new Character("me");
+		AMateria* tmp;
+		tmp = src->createMateria("ice");
+		me->equip(tmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		me->use(0, bob);
+		me->use(1, bob);
+		delete me;
+		delete src;
+		std::cout << "--- 10 ----" << std::endl;
 	}
 }
