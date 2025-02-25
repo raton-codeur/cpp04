@@ -13,8 +13,7 @@ int main()
 		std::cout << cure.getType() << std::endl;
 		std::cout << ice.getType() << std::endl;
 		std::cout << "--- 3 ---" << std::endl;
-		AMateria* cure2;
-		cure2 = cure.clone();
+		AMateria* cure2 = cure.clone();
 		delete cure2;
 		std::cout << "--- 4 ---" << std::endl;
 		Character bob("bob");
