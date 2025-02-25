@@ -62,6 +62,7 @@ int main()
 		me->use(0, bob);
 		me->use(1, bob);
 		delete me;
+		std::cout << "--- 12 ----" << std::endl;
 		delete src;
 		std::cout << "--- 11 ----" << std::endl;
 	}
