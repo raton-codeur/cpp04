@@ -13,7 +13,7 @@ Character::Character(const std::string& name) : _name(name)
 	std::memset(_inventory, 0, sizeof(_inventory));
 }
 
-Character::Character(const Character& character)
+Character::Character(const Character& character) : _name(character._name)
 {
 	std::cout << "Character " << _name << " : copy constructor" << std::endl;
 	std::memset(_inventory, 0, sizeof(_inventory));
