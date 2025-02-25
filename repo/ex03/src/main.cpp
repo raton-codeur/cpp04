@@ -51,6 +51,5 @@ int main()
 		delete materials[5];
 		std::cout << "--- 8 ----" << std::endl;
 		Character bob2(bob);
-		
 	}
 }
