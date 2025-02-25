@@ -46,11 +46,6 @@ Character::~Character()
 		if (_inventory[i])
 			delete _inventory[i];
 	}
-	for (int i = 0; i < 10; i++)
-	{
-		if (_floor[i])
-			delete _floor[i];
-	}
 }
 
 const std::string& Character::getName() const
@@ -74,17 +69,6 @@ void Character::unequip(int i)
 {
 	if (i < 0 || i >= 4)
 		return;
-	for (int j = 0; j < 10; j++)
-	{
-		if (_floor[j] == 0)
-		{
-			_floor[j] = _inventory[i];
-			_inventory[i] = 0;
-			return;
-		}
-	}
-	delete _floor[0];
-	_floor[0] = _inventory[i];
 	_inventory[i] = 0;
 }
 
