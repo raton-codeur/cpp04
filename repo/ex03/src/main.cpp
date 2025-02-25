@@ -30,9 +30,9 @@ int main()
 		std::cout << "--- 6 ---" << std::endl;
 		AMateria *materials[6];
 		for (int i = 0; i < 3; i++)
-			materials[i] = ice.clone();
+		materials[i] = ice.clone();
 		for (int i = 3; i < 6; i++)
-			materials[i] = cure.clone();
+		materials[i] = cure.clone();
 		std::cout << "--- 7 ----" << std::endl;
 		bob.equip(materials[3]); // cure
 		bob.equip(materials[0]); // ice
@@ -49,5 +49,8 @@ int main()
 		bob.use(0, bob);
 		delete materials[3];
 		delete materials[5];
+		std::cout << "--- 8 ----" << std::endl;
+		Character bob2(bob);
+		
 	}
 }
