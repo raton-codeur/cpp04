@@ -5,21 +5,19 @@ Character::Character() : _name("default name")
 {
 	std::cout << "Character : default constructor" << std::endl;
 	std::memset(_inventory, 0, sizeof(_inventory));
-	std::memset(_floor, 0, sizeof(_floor));
-}
-
-Character::Character(const Character& character)
-{
-	std::cout << "Character " << _name << " : copy constructor" << std::endl;
-	std::memset(_inventory, 0, sizeof(_inventory));
-	std::memset(_floor, 0, sizeof(_floor));
-	*this = character;
 }
 
 Character::Character(const std::string& name) : _name(name)
 {
 	std::cout << "Character " << _name << " : constructor" << std::endl;
 	std::memset(_inventory, 0, sizeof(_inventory));
+}
+
+Character::Character(const Character& character)
+{
+	std::cout << "Character " << _name << " : copy constructor" << std::endl;
+	std::memset(_inventory, 0, sizeof(_inventory));
+	*this = character;
 }
 
 Character& Character::operator=(const Character& character)
