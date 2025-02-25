@@ -28,24 +28,12 @@ Character& Character::operator=(const Character& character)
 		if (_inventory[i])
 			delete _inventory[i];
 	}
-	for (int i = 0; i < 10; i++)
-	{
-		if (_floor[i])
-			delete _floor[i];
-	}
 	for (int i = 0; i < 4; i++)
 	{
 		if (character._inventory[i])
 			_inventory[i] = character._inventory[i]->clone();
 		else
 			_inventory[i] = 0;
-	}
-	for (int i = 0; i < 10; i++)
-	{
-		if (character._floor[i])
-			_floor[i] = character._floor[i]->clone();
-		else
-			_floor[i] = 0;
 	}
 	return *this;
 }
