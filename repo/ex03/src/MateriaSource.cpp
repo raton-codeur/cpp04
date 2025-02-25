@@ -1,17 +1,16 @@
 #include "MateriaSource.hpp"
+#include <cstring>
 
 MateriaSource::MateriaSource()
 {
 	std::cout << "MateriaSource : default constructor" << std::endl;
-	for (int i = 0; i < 4; i++)
-		_materia[i] = 0;
+	std::memset(_materia, 0, sizeof(_materia));
 }
 
 MateriaSource::MateriaSource(const MateriaSource& materiaSource)
 {
 	std::cout << "MateriaSource : copy constructor" << std::endl;
-	for (int i = 0; i < 4; i++)
-		_materia[i] = 0;
+	std::memset(_materia, 0, sizeof(_materia));
 	*this = materiaSource;
 }
 
