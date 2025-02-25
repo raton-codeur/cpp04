@@ -4,7 +4,7 @@
 
 int main()
 {
-	std::cout << "--- 0 ---" << std::endl;
+	std::cout << "--- 1 ---" << std::endl;
 	{
 		Cat cat1;
 		{
@@ -12,7 +12,7 @@ int main()
 		}
 	}
 
-	std::cout << "--- 1 ---" << std::endl;
+	std::cout << "--- 2 ---" << std::endl;
 	{
 		Dog dog1;
 		{
@@ -23,19 +23,19 @@ int main()
 
 	Animal* animals[10];
 	
-	std::cout << "--- 2 ---" << std::endl;
+	std::cout << "--- 3 ---" << std::endl;
 	for (int i = 0; i < 5; i++)
 		animals[i] = new Cat();
 
-	std::cout << "--- 3 ---" << std::endl;
+	std::cout << "--- 4 ---" << std::endl;
 	for (int i = 5; i < 10; i++)
 		animals[i] = new Dog();
 
-	std::cout << "--- 4 ---" << std::endl;
+	std::cout << "--- 5 ---" << std::endl;
 	for (int i = 0; i < 10; i++)
 		animals[i]->makeSound();
 
-	std::cout << "--- 5 ---" << std::endl;
+	std::cout << "--- 6 ---" << std::endl;
 	for (int i = 0; i < 10; i++)
 		delete animals[i];
 }
