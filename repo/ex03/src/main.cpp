@@ -24,18 +24,23 @@ int main()
 			c4 = c3;
 		}
 		std::cout << "--- 5 ---" << std::endl;
-
 		Character bob("bob");
 		cure.use(bob);
 		ice.use(bob);
-		std::cout << "--- 5 ---" << std::endl;
-		bob.equip(cure.clone());
-		bob.equip(ice.clone());
+
+		AMateria *materials[2];
+		materials[0] = cure.clone();
+		materials[1] = ice.clone();
 		std::cout << "--- 6 ---" << std::endl;
+		bob.equip(materials[0]);
+		bob.equip(materials[1]);
 		bob.use(0, bob);
 		bob.use(1, bob);
 		bob.use(2, bob);
 		bob.unequip(0);
 		bob.use(0, bob);
+
+		for (int i = 0; i < 2; i++)
+			delete materials[i];
 	}
 }
