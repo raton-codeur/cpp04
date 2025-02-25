@@ -22,6 +22,8 @@ Character::Character(const Character& character) : _name(character._name)
 
 Character& Character::operator=(const Character& character)
 {
+	if (this == &character)
+		return *this;
 	_name = character._name;
 	for (int i = 0; i < 4; i++)
 	{
