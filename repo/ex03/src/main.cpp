@@ -57,11 +57,8 @@ int main()
 		src->learnMateria(new Cure());
 		ICharacter* me = new Character("me");
 		std::cout << "--- 10 ----" << std::endl;
-		AMateria* tmp;
-		tmp = src->createMateria("ice");
-		me->equip(tmp);
-		tmp = src->createMateria("cure");
-		me->equip(tmp);
+		me->equip(src->createMateria("ice"));
+		me->equip(src->createMateria("cure"));
 		me->use(0, bob);
 		me->use(1, bob);
 		delete me;
