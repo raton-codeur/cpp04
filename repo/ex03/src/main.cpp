@@ -27,20 +27,27 @@ int main()
 		Character bob("bob");
 		cure.use(bob);
 		ice.use(bob);
-
-		AMateria *materials[2];
 		std::cout << "--- 6 ---" << std::endl;
-		materials[0] = cure.clone();
-		materials[1] = ice.clone();
-		std::cout << "--- 7 ---" << std::endl;
-		bob.equip(materials[0]);
-		bob.equip(materials[1]);
+		AMateria *materials[6];
+		for (int i = 0; i < 3; i++)
+			materials[i] = ice.clone();
+		for (int i = 3; i < 6; i++)
+			materials[i] = cure.clone();
+		std::cout << "--- 7 ----" << std::endl;
+		bob.equip(materials[3]); // cure
+		bob.equip(materials[0]); // ice
+		bob.equip(materials[1]); // ice
+		bob.equip(materials[4]); // cure
+		bob.equip(materials[5]); // cure 5 not equiped → to be freed manually
 		bob.use(0, bob);
 		bob.use(1, bob);
 		bob.use(2, bob);
-		bob.unequip(0);
+		bob.use(3, bob);
+		bob.unequip(0); // cure 3 dropped → to be freed manually
+		bob.use(0, bob); // N/A
+		bob.equip(materials[2]); // ice
 		bob.use(0, bob);
-
-		delete materials[0];
+		delete materials[3];
+		delete materials[5];
 	}
 }
