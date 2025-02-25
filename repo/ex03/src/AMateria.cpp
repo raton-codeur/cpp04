@@ -5,14 +5,14 @@ AMateria::AMateria() : _type("default type")
 	std::cout << "AMateria : default constructor" << std::endl;
 }
 
-AMateria::AMateria(const AMateria& materia) : _type(materia._type)
-{
-	std::cout << "AMateria " << _type << " : copy constructor" << std::endl;
-}
-
 AMateria::AMateria(const std::string& type) : _type(type)
 {
 	std::cout << "AMateria " << type << " : constructor" << std::endl;
+}
+
+AMateria::AMateria(const AMateria& materia) : _type(materia._type)
+{
+	std::cout << "AMateria " << _type << " : copy constructor" << std::endl;
 }
 
 AMateria& AMateria::operator=(const AMateria& materia)

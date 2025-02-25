@@ -11,8 +11,8 @@ class AMateria
 		std::string _type;
 	public :
 							AMateria();
-							AMateria(const AMateria& materia);
 							AMateria(const std::string& type);
+							AMateria(const AMateria& materia);
 		AMateria&			operator=(const AMateria& materia);
 		virtual				~AMateria();
 		const std::string&	getType() const;
