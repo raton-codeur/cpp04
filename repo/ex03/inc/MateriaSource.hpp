@@ -5,7 +5,7 @@
 class MateriaSource : public IMateriaSource
 {
 	private :
-		AMateria* _materia[4];
+		AMateria* _materials[4];
 	public :
 						MateriaSource();
 						MateriaSource(const MateriaSource& materiaSource);
