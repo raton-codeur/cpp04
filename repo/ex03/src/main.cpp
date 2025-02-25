@@ -16,6 +16,15 @@ int main()
 		AMateria* cure2 = cure.clone();
 		delete cure2;
 		std::cout << "--- 4 ---" << std::endl;
+		{
+			Character c1;
+			Character c2("bob");
+			Character c3(c2);
+			Character c4;
+			c4 = c3;
+		}
+		std::cout << "--- 5 ---" << std::endl;
+
 		Character bob("bob");
 		cure.use(bob);
 		ice.use(bob);
