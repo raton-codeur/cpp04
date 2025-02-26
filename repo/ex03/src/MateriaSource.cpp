@@ -50,7 +50,7 @@ void MateriaSource::learnMateria(AMateria* materia)
 		if (_materials[i] == 0)
 		{
 			_materials[i] = materia;
-			return ;
+			return;
 		}
 	}
 }

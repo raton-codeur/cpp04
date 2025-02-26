@@ -38,12 +38,12 @@ int main()
 		bob.equip(materials[0]); // ice
 		bob.equip(materials[1]); // ice
 		bob.equip(materials[4]); // cure
-		bob.equip(materials[5]); // cure 5 not equiped → to be freed manually
+		bob.equip(materials[5]); // materials[5] (cure) to be freed manually
 		bob.use(0, bob);
 		bob.use(1, bob);
 		bob.use(2, bob);
 		bob.use(3, bob);
-		bob.unequip(0); // cure 3 dropped → to be freed manually
+		bob.unequip(0); // materials[3] (cure) to be freed manually
 		bob.use(0, bob); // N/A
 		bob.equip(materials[2]); // ice
 		bob.use(0, bob);

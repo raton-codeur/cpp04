@@ -62,7 +62,7 @@ void Character::equip(AMateria* m)
 		if (_inventory[i] == 0)
 		{
 			_inventory[i] = m;
-			break;
+			return;
 		}
 	}
 }
@@ -78,5 +78,6 @@ void Character::use(int i, ICharacter& target)
 {
 	if (i < 0 || i >= 4 || _inventory[i] == 0)
 		return;
-	_inventory[i]->use(target);
+	if (_inventory[i])
+		_inventory[i]->use(target);
 }
