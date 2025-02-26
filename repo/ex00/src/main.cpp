@@ -6,13 +6,14 @@ int main()
 {
 	std::cout << "--- 1 ---" << std::endl;
 	{
-		Cat cat1;
-		Cat cat2(cat1);
 		Animal animal;
-		animal = cat1;
 		std::cout << animal.getType() << std::endl;
+		animal.makeSound();
+		Cat cat1;
+		std::cout << cat1.getType() << std::endl;
+		cat1.makeSound();
+		Cat cat2(cat1);
 	}
-
 	std::cout << "--- 2 ---" << std::endl;
 	Animal* animal = new Animal();
 	Animal* cat = new Cat();
